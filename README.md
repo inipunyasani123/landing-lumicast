@@ -2,7 +2,7 @@
 
 Lumicast menyiarkan pelatihan in-house untuk pengurus organisasi dengan rundown tercetak. Siaran #14: Membaca Laporan Keuangan untuk Pengurus Organisasi, Rabu 16 Desember 2026.
 
-**Demo live:** https://landing-lumicast.vercel.app
+**Demo live:** https://landing-lumicast.pintuweb.id
 
 ![Tangkapan layar Lumicast](public/og.jpg)
 

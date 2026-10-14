@@ -7,10 +7,10 @@ import "./globals.css";
 const sora = Sora({ variable: "--font-sora", subsets: ["latin"], weight: ["400", "600", "700", "800"] });
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"WebSite","name":"Lumicast","description":"Siaran pelatihan in-house untuk pengurus organisasi","url":"https://landing-lumicast.vercel.app","inLanguage":"id"};
+const __jsonld = {"@context":"https://schema.org","@type":"WebSite","name":"Lumicast","description":"Siaran pelatihan in-house untuk pengurus organisasi","url":"https://landing-lumicast.pintuweb.id","inLanguage":"id"};
 
 export const metadata = {
-  metadataBase: new URL("https://landing-lumicast.vercel.app"),
+  metadataBase: new URL("https://landing-lumicast.pintuweb.id"),
   title: { default: "Lumicast — Siaran Pelatihan untuk Pengurus Organisasi", template: "%s — Lumicast" },
   description: "Lumicast menyiarkan pelatihan in-house untuk pengurus organisasi dengan rundown tercetak. Siaran #14: Membaca Laporan Keuangan untuk Pengurus Organisasi, Rabu 16 Desember 2026.",
   applicationName: "Lumicast",
@@ -18,11 +18,11 @@ export const metadata = {
   authors: [{ name: "Lumicast" }],
   creator: "Lumicast",
   publisher: "Lumicast",
-  alternates: { canonical: "https://landing-lumicast.vercel.app" },
+  alternates: { canonical: "https://landing-lumicast.pintuweb.id" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://landing-lumicast.vercel.app",
+    url: "https://landing-lumicast.pintuweb.id",
     siteName: "Lumicast",
     title: "Lumicast — Siaran Pelatihan untuk Pengurus Organisasi",
     description: "Lumicast menyiarkan pelatihan in-house untuk pengurus organisasi dengan rundown tercetak. Siaran #14: Membaca Laporan Keuangan untuk Pengurus Organisasi, Rabu 16 Desember 2026.",
