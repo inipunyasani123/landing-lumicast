@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import { NARASUMBER } from '@/lib/siaran';
 
-/* Narasumber ditampilkan seperti di layar siaran: bingkai 16:9 dengan papan
-   nama lower-third di kiri bawah. Tidak memakai foto — orangnya fiktif. */
+/* Narasumber ditampilkan seperti di layar siaran: bingkai 16:9 dengan papan nama lower-third di
+   kiri bawah. Orangnya fiktif, jadi gambarnya ilustrasi buatan sendiri (public/images/kamera),
+   bukan foto orang sungguhan. */
 export default function Narasumber() {
   return (
     <section id="narasumber" className="scroll-mt-16 bg-deck py-16 text-white md:py-28">
@@ -18,11 +20,15 @@ export default function Narasumber() {
             <li key={n.kode} className="w-[84%] shrink-0 snap-center md:w-auto">
               <article>
                 <div className="relative aspect-video overflow-hidden bg-deck-2">
+                  <Image
+                    src={`/images/kamera/${n.kode.toLowerCase()}.webp`}
+                    alt=""
+                    fill
+                    sizes="(min-width: 768px) 22rem, 84vw"
+                    className="object-cover"
+                  />
                   <div aria-hidden="true" className="absolute inset-0 bg-[repeating-linear-gradient(to_bottom,rgb(255_255_255/0.035)_0_1px,transparent_1px_4px)]" />
-                  <span aria-hidden="true" className="slug absolute top-3 left-3 text-white/60">Kamera {n.kode}</span>
-                  <span aria-hidden="true" className="absolute top-1/2 right-6 -translate-y-1/2 font-[family-name:var(--font-sora)] text-6xl font-extrabold text-white/10">
-                    {n.kode}
-                  </span>
+                  <span aria-hidden="true" className="slug absolute top-3 left-3 bg-deck/70 px-1.5 py-0.5 text-white/80">Kamera {n.kode}</span>
                   {/* Lower-third */}
                   <div className="absolute bottom-4 left-4 max-w-[85%]">
                     <h3 className="bg-white px-3 py-1.5 text-sm leading-snug font-semibold text-ink">{n.nama}</h3>
