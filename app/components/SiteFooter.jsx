@@ -1,14 +1,15 @@
 import Link from 'next/link';
-import { SIARAN } from '@/lib/siaran';
+import { SIARAN, tanggalSiaran } from '@/lib/siaran';
 
 export default function SiteFooter() {
+  const t = tanggalSiaran(SIARAN.nomor);
   return (
     <footer className="bg-deck text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[minmax(0,1.4fr)_repeat(2,minmax(0,1fr))]">
         <div>
-          <p className="slug on-air flex items-center text-white">Lumicast</p>
+          <p className="slug tanda flex items-center text-white">Lumicast</p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">
-            Siaran pelatihan in-house untuk organisasi, dijalankan dengan rundown tercetak. Siaran #{SIARAN.nomor}: {SIARAN.hari}.
+            Siaran pelatihan in-house untuk organisasi, dijalankan dengan rundown tercetak. Siaran #{SIARAN.nomor}: {t.hari}.
           </p>
         </div>
         <nav aria-label="Siaran ini">

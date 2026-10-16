@@ -1,4 +1,4 @@
-import { SIARAN, SITE } from '@/lib/siaran';
+import { SIARAN, SITE, tanggalSiaran } from '@/lib/siaran';
 import DaftarCek from '../components/DaftarCek';
 
 export const metadata = {
@@ -8,16 +8,17 @@ export const metadata = {
 };
 
 export default function CekPerangkat() {
+  const t = tanggalSiaran(SIARAN.nomor);
   return (
     <main className="pt-16">
       <section className="bg-deck px-6 pt-16 pb-14 text-white">
         <div className="mx-auto max-w-6xl">
-          <p className="slug on-air flex items-center text-white">Sebelum menit ke-nol</p>
+          <p className="slug tanda flex items-center text-white">Sebelum menit ke-nol</p>
           <h1 className="mt-5 max-w-3xl text-4xl leading-[1.05] font-semibold text-white md:text-5xl">
             Delapan langkah supaya Anda tidak menghabiskan segmen pertama mencari tombol mikrofon
           </h1>
           <p className="mt-5 max-w-xl leading-relaxed text-white/80">
-            Untuk siaran #{SIARAN.nomor} · {SIARAN.hari} · {SIARAN.jam}. Tautan dibuka 15 menit lebih awal khusus untuk uji suara.
+            Untuk siaran #{SIARAN.nomor} · {t.hari} · {SIARAN.jam}. Tautan dibuka 15 menit lebih awal khusus untuk uji suara.
           </p>
         </div>
       </section>

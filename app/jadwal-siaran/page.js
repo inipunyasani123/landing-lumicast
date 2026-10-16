@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { JADWAL, SITE, menitKeJam } from '@/lib/siaran';
+import { JADWAL, SITE, menitKeJam, tanggalSiaran } from '@/lib/siaran';
 
 export const metadata = {
   title: 'Jadwal Siaran',
@@ -19,7 +19,7 @@ export default function JadwalSiaran() {
     <main className="pt-16">
       <section className="bg-deck px-6 pt-16 pb-14 text-white">
         <div className="mx-auto max-w-6xl">
-          <p className="slug on-air flex items-center text-white">Panduan acara</p>
+          <p className="slug tanda flex items-center text-white">Panduan acara</p>
           <h1 className="mt-5 max-w-3xl text-4xl leading-[1.05] font-semibold text-white md:text-5xl">
             Siaran untuk pengurus organisasi, setiap Rabu ketiga
           </h1>
@@ -43,8 +43,8 @@ export default function JadwalSiaran() {
               <li key={j.nomor} className="grid gap-x-6 gap-y-3 border-b border-rule py-6 md:grid-cols-[4rem_7.5rem_minmax(0,1.5fr)_minmax(0,1fr)_9rem] md:items-center">
                 <span className="slug tnum text-live">#{j.nomor}</span>
                 <span>
-                  <span className="block font-semibold text-ink tnum">{j.tanggal}</span>
-                  <span className="text-sm">{j.hari} · {j.jam}</span>
+                  <span className="block font-semibold text-ink tnum">{tanggalSiaran(j.nomor).tanggal}</span>
+                  <span className="text-sm">{tanggalSiaran(j.nomor).namaHari} · {j.jam}</span>
                 </span>
                 <span>
                   <h2 className="text-lg leading-snug font-semibold">{j.judul}</h2>

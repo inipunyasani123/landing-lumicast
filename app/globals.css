@@ -17,7 +17,7 @@
   --color-ink: #0e1a2b; /* teks utama */
   --color-ink-soft: #47566a;
   --color-live: #0a6845;
-  --color-live-bright: #34d399; /* varian TERANG: teks di atas bidang gelap */ /* hijau siaran — penanda status */
+  --color-live-bright: #34d399; /* hijau siaran, varian TERANG untuk teks di atas bidang gelap */
 }
 
 @layer base {
@@ -62,27 +62,18 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. Titik siaran — penanda status yang berdenyut pelan
+   3. Tanda rundown — kotak kecil berbingkai di depan label, seperti kolom
+      centang pada lembar rundown. Sengaja diam: Lumicast tidak sedang
+      siaran, jadi tidak ada titik "on air" yang berdenyut.
    -------------------------------------------------------------------------- */
-.on-air::before {
+.tanda::before {
   content: "";
   display: inline-block;
-  width: 0.45rem;
-  height: 0.45rem;
-  margin-right: 0.5rem;
-  border-radius: 999px;
-  background: var(--color-live);
-  animation: pulse-live 2.4s ease-in-out infinite;
-}
-
-@keyframes pulse-live {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.35;
-  }
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.55rem;
+  border: 1.5px solid currentColor;
 }
 
 /* --------------------------------------------------------------------------
@@ -97,7 +88,27 @@
 }
 
 /* --------------------------------------------------------------------------
-   5. Aksesibilitas
+   5. Masuk-layar hero — CSS murni (dulu framer-motion), jadi isi tetap
+      terlihat walau JavaScript belum jalan dan tidak menunda LCP.
+   -------------------------------------------------------------------------- */
+@keyframes naik {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+.naik {
+  animation: naik 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.naik-2 {
+  animation-delay: 0.08s;
+}
+.naik-3 {
+  animation-delay: 0.16s;
+}
+
+/* --------------------------------------------------------------------------
+   6. Aksesibilitas
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,

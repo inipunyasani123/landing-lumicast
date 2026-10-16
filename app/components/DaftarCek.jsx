@@ -46,7 +46,7 @@ export default function DaftarCek() {
 
       <aside className="h-fit lg:sticky lg:top-24">
         <div className={`p-6 ${siap ? 'bg-live text-white' : 'bg-deck text-white'}`}>
-          <p className={`slug flex items-center ${siap ? 'on-air' : ''}`} aria-live="polite">
+          <p className={`slug flex items-center ${siap ? 'tanda' : ''}`} aria-live="polite">
             {siap ? 'Siap siar' : 'Belum siap'}
           </p>
           <p className="mt-4 text-4xl font-semibold tnum">

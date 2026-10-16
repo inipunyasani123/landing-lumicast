@@ -1,7 +1,4 @@
-'use client';
-
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { SEGMEN, TOTAL_MENIT } from '@/lib/siaran';
 
 /* ============================================================================
@@ -25,11 +22,11 @@ const warnaJenis = {
 
 export default function Rundown() {
   return (
-    <section id="rundown" className="relative scroll-mt-16 overflow-hidden bg-sheet py-20 md:py-28">
+    <section id="rundown" className="relative scroll-mt-16 overflow-hidden bg-sheet py-16 md:py-28">
       <div aria-hidden="true" className="ruled absolute inset-0" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6">
-        <div className="mb-12 max-w-2xl">
+        <div className="mb-8 max-w-2xl md:mb-12">
           <p className="slug mb-5 text-live">Rundown</p>
           <h2 className="text-[2rem] leading-[1.1] font-semibold md:text-[2.6rem]">
             Enam segmen, total {TOTAL_MENIT} menit, tanpa jam karet
@@ -50,31 +47,31 @@ export default function Rundown() {
         </div>
 
         <ol>
-          {segmen.map((s, i) => (
-            <motion.li
+          {segmen.map((s) => (
+            <li
               key={s.mulai}
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.42, delay: i * 0.05 }}
-              className="grid gap-x-5 gap-y-2 border-b border-rule py-5 md:grid-cols-[5.5rem_3.5rem_minmax(0,1.6fr)_7rem_minmax(0,1fr)] md:items-baseline"
+              className="grid grid-cols-[3.75rem_minmax(0,1fr)] gap-x-4 gap-y-1.5 border-b border-rule py-4 md:grid-cols-[5.5rem_3.5rem_minmax(0,1.6fr)_7rem_minmax(0,1fr)] md:items-baseline md:gap-x-5 md:gap-y-2 md:py-5"
             >
-              <span className="tnum text-lg font-semibold text-ink md:text-base">{s.mulai}</span>
-              <span className="slug tnum text-ink-soft">{s.durasi}</span>
+              <span className="row-span-2 md:row-span-1">
+                <span className="tnum block text-lg font-semibold text-ink md:text-base">{s.mulai}</span>
+                <span className="slug tnum mt-1 block text-ink-soft md:hidden">{s.durasi}</span>
+              </span>
+              <span className="slug tnum hidden text-ink-soft md:block">{s.durasi}</span>
 
               <span>
                 <span className="block font-medium text-ink">{s.judul}</span>
                 <span className="mt-1 block text-sm leading-relaxed text-ink-soft">{s.catatan}</span>
               </span>
 
-              <span className="justify-self-start">
-                <span className={`slug inline-block px-2.5 py-1.5 ${warnaJenis[s.jenis]}`}>
-                  {s.jenis}
+              <span className="flex flex-wrap items-center gap-x-3 gap-y-1 md:contents">
+                <span className="md:justify-self-start">
+                  <span className={`slug inline-block px-2.5 py-1.5 ${warnaJenis[s.jenis]}`}>
+                    {s.jenis}
+                  </span>
                 </span>
+                <span className="text-sm text-ink-soft">{s.pj}</span>
               </span>
-
-              <span className="text-sm text-ink-soft">{s.pj}</span>
-            </motion.li>
+            </li>
           ))}
         </ol>
 
