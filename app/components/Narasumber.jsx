@@ -42,7 +42,7 @@ export default function Narasumber() {
                     <li key={s}>— {s}</li>
                   ))}
                 </ul>
-                <a href="#rundown" className="slug mt-4 inline-block border-b border-white/30 pb-1 text-white hover:border-white">
+                <a href="#rundown" className="slug mt-2 inline-flex min-h-11 items-center border-b border-white/30 text-white hover:border-white">
                   Lihat jamnya di rundown
                 </a>
               </article>

@@ -14,18 +14,18 @@ export default function SiteFooter() {
         </div>
         <nav aria-label="Siaran ini">
           <p className="slug mb-4 text-live-bright">Siaran #{SIARAN.nomor}</p>
-          <ul className="space-y-2.5 text-sm text-white/80">
-            <li><Link href="/#rundown" className="hover:text-white">Rundown</Link></li>
-            <li><Link href="/#narasumber" className="hover:text-white">Narasumber</Link></li>
-            <li><Link href="/#paket" className="hover:text-white">Paket</Link></li>
-            <li><Link href="/#daftar" className="hover:text-white">Daftar</Link></li>
+          <ul className="space-y-0.5 text-sm text-white/80">
+            <li><Link href="/#rundown" className="inline-block py-3 hover:text-white">Rundown</Link></li>
+            <li><Link href="/#narasumber" className="inline-block py-3 hover:text-white">Narasumber</Link></li>
+            <li><Link href="/#paket" className="inline-block py-3 hover:text-white">Paket</Link></li>
+            <li><Link href="/#daftar" className="inline-block py-3 hover:text-white">Daftar</Link></li>
           </ul>
         </nav>
         <nav aria-label="Sebelum dan sesudah siaran">
           <p className="slug mb-4 text-live-bright">Panduan</p>
-          <ul className="space-y-2.5 text-sm text-white/80">
-            <li><Link href="/jadwal-siaran" className="hover:text-white">Jadwal siaran berikutnya</Link></li>
-            <li><Link href="/cek-perangkat" className="hover:text-white">Cek perangkat</Link></li>
+          <ul className="space-y-0.5 text-sm text-white/80">
+            <li><Link href="/jadwal-siaran" className="inline-block py-3 hover:text-white">Jadwal siaran berikutnya</Link></li>
+            <li><Link href="/cek-perangkat" className="inline-block py-3 hover:text-white">Cek perangkat</Link></li>
           </ul>
         </nav>
       </div>

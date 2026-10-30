@@ -57,7 +57,7 @@ export default function Navigasi({ children }) {
           aria-expanded={buka}
           aria-controls="menu-ponsel"
           onClick={() => setBuka((b) => !b)}
-          className="slug inline-flex h-10 min-w-[4.75rem] items-center justify-center border border-white/30 px-3 text-white md:hidden"
+          className="slug inline-flex h-11 min-w-[4.75rem] items-center justify-center border border-white/30 px-3 text-white md:hidden"
         >
           {buka ? 'Tutup' : 'Menu'}
         </button>

@@ -30,7 +30,7 @@ export default function DaftarCek() {
                       type="checkbox"
                       checked={centang.has(t)}
                       onChange={() => ubah(t)}
-                      className="mt-1 h-5 w-5 shrink-0 accent-[#0a6845]"
+                      className="mt-0.5 h-6 w-6 shrink-0 accent-[#0a6845]"
                     />
                     <span>
                       <span className={`block font-medium ${centang.has(t) ? 'text-ink-soft line-through' : 'text-ink'}`}>{t}</span>

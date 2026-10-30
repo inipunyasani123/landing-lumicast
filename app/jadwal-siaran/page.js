@@ -57,7 +57,7 @@ export default function JadwalSiaran() {
                 <span className="flex flex-wrap items-center gap-3 md:flex-col md:items-start">
                   <span className={`slug inline-block px-2.5 py-1.5 ${warna[j.status]}`}>{j.status}</span>
                   {j.tautan && (
-                    <Link href={j.tautan} className="slug text-live underline underline-offset-4">Daftar</Link>
+                    <Link href={j.tautan} className="slug inline-flex min-h-11 items-center text-live underline underline-offset-4">Daftar</Link>
                   )}
                 </span>
               </li>
